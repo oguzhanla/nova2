@@ -25,14 +25,14 @@ jobs:
           java-version: '17'
 
       - name: Install Dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Build Web Assets
         run: npm run build
 
       - name: Install Capacitor Android & Sync
         run: |
-          npm install @capacitor/android @capacitor/core @capacitor/cli
+          npm install @capacitor/android @capacitor/core @capacitor/cli --legacy-peer-deps
           npx cap add android || true
           npx cap sync android
 
